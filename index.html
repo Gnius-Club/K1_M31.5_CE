@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Misión 31.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background-color: #5DADE2; /* Azul Gnius */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+        }
+        .banner {
+            background-color: #85C1E9; /* Azul más claro */
+            color: #333;
+            padding: 15px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .banner:hover {
+            background-color: #AED6F1;
+        }
+        .banner .title {
+            font-size: 1.3em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .banner .subtitle {
+            font-size: 1em;
+            margin-top: 8px;
+            border-top: 1px solid #fff;
+            padding-top: 8px;
+            color: #1A5276; /* Azul oscuro texto */
+        }
+        .content {
+            display: none;
+            padding: 15px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #EAF2F8; /* Azul muy claro fondo */
+            border-radius: 5px;
+        }
+        .dialogue {
+            background-color: #FEF9E7; /* Amarillo pálido para diálogo */
+            border: 1px solid #FAD7A0;
+            border-radius: 10px;
+            padding: 10px 15px;
+            margin: 15px 0;
+            text-align: left; /* Cambiado a izquierda para mejor lectura */
+            font-style: italic;
+            color: #784212; /* Marrón oscuro texto */
+            position: relative; /* Para el bocadillo */
+            border-left: 5px solid #F39C12; /* Naranja */
+        }
+
+        .dropdown {
+            margin-bottom: 25px;
+            text-align: center; /* Centrar dropdown */
+        }
+        .dropdown label {
+            font-weight: bold;
+            color: #1A5276;
+        }
+        .dropdown select {
+            font-size: 1.1em;
+            padding: 8px 12px;
+            margin-left: 10px;
+            border-radius: 5px;
+            border: 1px solid #85C1E9;
+        }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px;}
+        td { padding: 12px; border: 1px solid #AED6F1; vertical-align: top; }
+        td strong { color: #1A5276; }
+        .level-title { /* Clase específica para el título del nivel */
+             text-align: center;
+             color: #5DADE2;
+             font-size: 1.4em;
+             margin-bottom: 20px;
+        }
+        /* Clases para ocultar/mostrar contenido por nivel */
+        .k1-content, .k2-content, .k3-content { display: none; }
+         .activity.active .banner {
+             background-color: #AED6F1; /* Slightly different color when active */
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Playbook - Misión 31.5: ¡El Juego del Tesoro de Bloques Infinitos!</h1>
+        </div>
+
+        <div class="dropdown">
+            <label for="class-level">Nivel:</label>
+            <select id="class-level" onchange="updateContent()">
+                <option value="K1">K1 (3 años)</option>
+                <option value="K2">K2 (4 años)</option>
+                <option value="K3">K3 (5 años)</option>
+            </select>
+        </div>
+
+        <h2 id="selected-level" class="level-title">Nivel: K1 (3 años)</h2>
+
+        <!-- ............................................Aquí empezarán las actividades........................................... -->
+
+<!-- Actividad 0: Revisión de Materiales -->
+<div id="activity-0" class="activity">
+    <div class="banner" onclick="toggleContent('revision_materiales')">
+        <div class="title">📚 Actividad 0: Revisión de Materiales</div>
+        <div class="subtitle">Objetivo: Asegurarse de que todos los materiales necesarios para la clase estén disponibles y preparados antes de que lleguen los niños.</div>
+    </div>
+    <div id="revision_materiales" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (N/A):</strong> Revisa que tengas listos los materiales indicados en la **DIAPOSITIVA 1**: 1 Set LEGO Coding Express (tren, vías rectas, vías curvas, ladrillos de acción rojo, amarillo, azul) y 10 iBricks por cada pareja. Papel y colores (opcional, para planificar).</td>
+                <td><strong>DIÁLOGO SUGERIDO:</strong> N/A</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 1: Bienvenida e Introducción -->
+<div id="activity-1" class="activity">
+    <div class="banner" onclick="toggleContent('bienvenida')">
+        <div class="title">🎉 Actividad 1: ¡Mapas, Tesoros y Trenes! ⏰ Tiempo: 1 minuto</div>
+        <div class="subtitle">Objetivo: Introducir la emocionante idea de buscar tesoros usando un mapa y un vehículo especial (el tren).</div>
+    </div>
+    <div id="bienvenida" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 2** “Bienvenida”. Saluda al CODE SQUAD preguntando si alguna vez han buscado un tesoro o seguido un mapa.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡Ahoy, aventureros del CODE SQUAD! ¿Alguna vez han soñado con encontrar un tesoro escondido? ¡Como los piratas con sus mapas secretos! ¡Hoy, nuestra misión nos convierte en buscadores de tesoros! ¡Tenemos un mapa antiguo y un vehículo explorador súper rápido!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (0.5 minutos):</strong> Reproduce la **DIAPOSITIVA 3** "Gimnasio CODE SQUAD". Explica que seguir un mapa requiere atención a los detalles y planificación.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Para encontrar un tesoro, hay que seguir el mapa con mucha atención! ¡Cada curva, cada marca es importante! ¡Necesitamos nuestros cerebros de explorador bien despiertos! Vamos al Gimnasio Cerebral para practicar cómo seguir instrucciones y planificar nuestro camino hacia... ¡la riqueza! ¡Bueno, hacia la diversión!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 2: Baile de Algoritmos -->
+<div id="activity-2" class="activity">
+    <div class="banner" onclick="toggleContent('baile-algoritmos')">
+        <div class="title">🎶 Actividad 2: Baile de Algoritmos ⏰ Tiempo: 2 minutos</div>
+        <div class="subtitle">Objetivo: Practicar el seguimiento de pasos en orden para reforzar la secuenciación necesaria en la ruta del mapa.</div>
+    </div>
+    <div id="baile-algoritmos" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 4** “Baile de Algoritmos”. Guía el baile, conectándolo con seguir las "instrucciones" del mapa.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Este baile es como seguir un mapa secreto! ¡Un paso aquí, un giro allá! ¡Hay que hacerlos en orden para llegar al movimiento final! ¡Igual que en nuestro mapa del tesoro! ¡Sigan la música y la secuencia, exploradores!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 3: Planteamiento del Problema - El Mapa de BlueBricks -->
+<div id="activity-3" class="activity">
+    <div class="banner" onclick="toggleContent('planteamiento-problema')">
+        <div class="title">🗺️ Actividad 3: ¡El Mapa del Tesoro de Bloques Infinitos! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Presentar la historia del mapa, el tesoro (bloques gigantes) y el reto de construir la ruta con puntos especiales (ladrillos de acción).</div>
+    </div>
+    <div id="planteamiento-problema" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 5**. Narra la leyenda del Capitán BlueBricks y su tesoro.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Escuchen, CODE SQUAD! ¡Cuenta la leyenda que el famoso Capitán BlueBricks escondió el 'Tesoro de Bloques Infinitos' en una isla secreta! ¡Dicen que son bloques mágicos que nunca se acaban! ¡Y miren lo que encontramos! (Muestra un "mapa" imaginario o la idea). ¡Es el mapa secreto del Capitán BlueBricks! ¡Nos muestra el camino para llegar al tesoro!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1.5 minutos):</strong> Reproduce la **DIAPOSITIVA 6**. Explica el reto: usar las vías para construir el camino del mapa, los bloques gigantes para marcar el Inicio y el Tesoro, y los ladrillos de acción para los puntos especiales del mapa.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡El mapa es nuestro desafío! ¡Tenemos que construir el camino que muestra usando nuestras vías! Pondremos unos bloques gigantes para marcar dónde empezamos (el Puerto) y dónde está el tesoro (¡La X marca el lugar!). Pero ¡ojo!, el mapa también tiene marcas especiales (muestra ladrillos de acción). ¡Son lugares donde pasa algo! Quizás encontramos una pista (sonido), o hay una pequeña trampa (parar), ¡o superamos un obstáculo (otra acción)! Nuestro reto es: ¡construir el camino del mapa y colocar los ladrillos de acción en los puntos correctos para que nuestro Coding Express, nuestro vehículo explorador, llegue al Tesoro de Bloques Infinitos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 4: Formación de Parejas -->
+<div id="activity-4" class="activity">
+    <div class="banner" onclick="toggleContent('formacion-parejas')">
+        <div class="title">🤝 Actividad 4: ¡Equipos de Exploradores! ⏰ Tiempo: 3 minutos</div>
+        <div class="subtitle">Objetivo: Formar parejas para construir el mapa/tablero y programar la ruta del tesoro.</div>
+    </div>
+    <div id="formacion-parejas" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 7** “Formación de Equipos”. Explica que los grandes exploradores siempre trabajan en equipo para descifrar mapas. Forma las parejas.</td>
+                <td>
+                     <div class="dialogue">
+                        "¡Descifrar un mapa antiguo y buscar tesoros es un trabajo para los exploradores más valientes e inteligentes! ¡Y los mejores exploradores siempre trabajan en equipo! ¡Dos pares de ojos ven mejor el mapa que uno solo! ¡Formen sus Equipos de Exploradores para esta gran aventura!"
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td><strong>PASO 2 (1 minuto):</strong> Verifica que todos tengan pareja. Anímales a prepararse para recibir sus "materiales de expedición" (vías, tren, ladrillos, bloques).</td>
+                <td>
+                     <div class="dialogue">
+                        "¿Listos, Equipos de Exploradores? ¡Prepárense para recibir sus herramientas: las vías para construir el mapa, los bloques para marcar el inicio y el tesoro, los ladrillos de acción para las marcas secretas, y nuestro confiable Coding Express! ¡La búsqueda del tesoro va a comenzar!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 5: Reto de Codificación - ¡Construye el Mapa y Coloca las Pistas! -->
+<div id="activity-5" class="activity">
+    <div class="banner" onclick="toggleContent('reto-codificacion')">
+        <div class="title">🛠️ Actividad 5: ¡Trazando la Ruta al Tesoro! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Construir físicamente el camino del mapa con vías y bloques, y colocar estratégicamente los ladrillos de acción según el nivel.</div>
+    </div>
+    <div id="reto-codificacion" class="content">
+        <table>
+             <!-- Paso Común: Construir Inicio y Fin -->
+             <tr>
+                <td><strong>PASO 1 (2 minutos):</strong> Reproduce la **DIAPOSITIVA 8** "¡Marca el Inicio y el Tesoro!". Pide a las parejas que usen 2 bloques gigantes para marcar el punto de INICIO y 2-3 bloques para marcar el TESORO en su área.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Exploradores! Lo primero en todo mapa es saber ¡dónde empezamos y a dónde vamos! Tomen dos bloques gigantes y pónganlos juntos: ¡ese será nuestro Puerto de Salida! Ahora, al otro lado de su espacio, pongan otros dos o tres bloques juntos: ¡esa es la Isla del Tesoro! ¡Marquen bien sus puntos!"
+                    </div>
+                </td>
+            </tr>
+            <!-- Contenido Específico por Nivel -->
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 2 - K1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 9** "Mapa K1: ¡Rumbo al Tesoro Sonoro!". Guía para construir un camino recto (3-4 vías) desde el Inicio hasta el Tesoro. Colocar 1 ladrillo AMARILLO justo antes del Tesoro.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Su mapa es un camino directo! Usen 3 o 4 vías rectas para conectar el Puerto de Salida con la Isla del Tesoro. ¡Ahora, la marca especial! El mapa dice que justo antes de llegar al tesoro, ¡hay una señal sonora! Tomen el ladrillo AMARILLO (¡el que hace sonido!) y pónganlo en la última vía, ¡justo antes de los bloques del tesoro!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 2 - K2 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 10** "Mapa K2: ¡Curva, Pista y Espera!". Guía para construir camino con 1 curva (ej. recta-curva-recta). Colocar 1 ladrillo AMARILLO (pista sonora) a mitad de camino y 1 ladrillo ROJO (parar/esperar) antes del Tesoro.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Exploradores K2! ¡Su mapa tiene una curva! Construyan el camino desde el Puerto hasta el Tesoro usando una curva (recta, curva, recta). ¡Atentos a las marcas! A mitad de camino, el mapa indica ¡una pista sonora! Pongan el ladrillo AMARILLO ahí. Y justo antes del Tesoro, ¡hay una señal de ALTO para ser cuidadosos! Pongan el ladrillo ROJO al final."
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 2 - K3 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 11** "Mapa K3: ¡Obstáculo, Llave y Tesoro Final!". Guía para construir camino con 2 curvas. Colocar 1 ladrillo AZUL (sonido especial 'obstáculo superado'), 1 AMARILLO (sonido 'llave encontrada'), y 1 ROJO (parar 'tesoro alcanzado') en secuencia.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros Exploradores K3! ¡Su mapa es el más complejo! ¡Tiene dos curvas! Construyan el camino. ¡Y atentos a las marcas! Primero, encontrarán un obstáculo que superarán (¡pongan el ladrillo AZUL para un sonido de victoria!). Luego, más adelante, encontrarán la llave del tesoro (¡pongan el ladrillo AMARILLO para el sonido de llave!). Y finalmente, al llegar al tesoro, ¡hay que detenerse! (¡Pongan el ladrillo ROJO al final!). ¡Coloquen las 3 marcas en orden!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 6: ¡La Expedición del Coding Express! -->
+<div id="activity-6" class="activity">
+    <div class="banner" onclick="toggleContent('probando-mapa')">
+        <div class="title">🚢 Actividad 6: ¡El Coding Express Explora el Mapa! ⏰ Tiempo: 7 minutos</div>
+        <div class="subtitle">Objetivo: Ejecutar la secuencia (empujar el tren) y observar las acciones que realiza al pasar por los ladrillos de acción colocados en el mapa.</div>
+    </div>
+    <div id="probando-mapa" class="content">
+        <table>
+             <!-- K1 -->
+            <tr class="k1-content">
+                <td><strong>PASO 1 - K1 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 12** "¡Ruta K1 Probada!". Guía para poner el tren en el Puerto de Salida y empujarlo. Observar si avanza y hace el sonido amarillo al llegar al Tesoro. Celebrar. Repetir si es necesario.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Equipo K1! ¡Pongan su Coding Express en el Puerto de Salida! ¡Denle un empujoncito para que siga el mapa! ¡Miren cómo avanza! ¿Llegó al final? ¿Escucharon el sonido del ladrillo amarillo? ¡Pip pip! ¡Significa que encontró el tesoro! ¡LO LOGRARON! ¡Pueden hacer que el tren explore de nuevo!"
+                    </div>
+                </td>
+            </tr>
+             <!-- K2 -->
+             <tr class="k2-content">
+                 <td><strong>PASO 1 - K2 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 13** "¡Ruta K2 Verificada!". Guía para probar el tren. Observar si pasa la curva, suena con el amarillo y se detiene con el rojo. Comentar cada acción. Repetir/ajustar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Exploradores K2! ¡Tren listo en el Puerto! ¡Empujón suave! ¡Observen! ¿Pasó la curva? ¡Sí! ¿Escucharon la pista sonora (amarillo)? ¡Pip pip! ¡Bien! ¿Y se detuvo justo antes del tesoro (rojo)? ¡ALTO! ¡Perfecto! ¡Siguieron el mapa y sus marcas! ¡Excelente! ¿Quieren intentarlo otra vez?"
+                    </div>
+                </td>
+            </tr>
+             <!-- K3 -->
+             <tr class="k3-content">
+                 <td><strong>PASO 1 - K3 (7 minutos):</strong> Reproduce la **DIAPOSITIVA 14** "¡Ruta K3 Conquistada!". Guía para probar el tren. Observar si pasa las curvas y realiza las 3 acciones (sonido azul, sonido amarillo, parada roja) en orden. Celebrar la secuencia completa. Repetir/ajustar.</td>
+                 <td>
+                     <div class="dialogue">
+                        "¡Maestros K3! ¡El viaje final! ¡Tren en el Puerto! ¡Inicien la expedición! ¡Miren! ¿Pasó la primera curva? ¿Superó el obstáculo (sonido azul)? ¡Sí! ¿Segunda curva? ¿Encontró la llave (sonido amarillo)? ¡Pip pip! ¿Y llegó al tesoro y se detuvo (rojo)? ¡ALTO! ¡INCREÍBLE! ¡Han seguido el mapa más difícil y encontrado el Tesoro de Bloques Infinitos! ¡Son exploradores expertos!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<!-- Actividad 7 OMITIDA -->
+
+<!-- Actividad 8: Conclusión y Reflexión -->
+<div id="activity-8" class="activity">
+    <div class="banner" onclick="toggleContent('conclusion-reflexion')">
+        <div class="title">🏁 Actividad 8: ¡Tesoro Encontrado! ⏰ Tiempo: 5 minutos</div>
+        <div class="subtitle">Objetivo: Celebrar el éxito de la búsqueda del tesoro, reforzar cómo los ladrillos de acción funcionaron como puntos clave en el mapa/juego y conectar con la secuenciación.</div>
+    </div>
+    <div id="conclusion-reflexion" class="content">
+        <table>
+            <tr>
+                <td><strong>PASO 1 (5 minutos):</strong> Reproduce la **DIAPOSITIVA 15** "¡Misión Cumplida!". Reúne al grupo, celebra el hallazgo del Tesoro de Bloques Infinitos. Realiza preguntas de reflexión.</td>
+                <td>
+                    <div class="dialogue">
+                        "¡LO ENCONTRARON, CODE SQUAD! ¡Han seguido el mapa del Capitán BlueBricks y han llegado al legendario Tesoro de Bloques Infinitos! ¡Qué gran aventura! ¡Misión cumplida, valientes exploradores! Pensemos en nuestro viaje:
+1. ¿Qué usamos para construir el camino del mapa? (¡Las vías!)
+2. ¿Qué eran las marcas especiales en el mapa? (¡Los ladrillos de acción!) ¿Qué hacían? (¡Sonido, parar!)
+3. ¿Tuvimos que poner las vías y los ladrillos en un orden especial para que el tren llegara al tesoro? (¡Sí!)
+¡Hoy creamos nuestro propio juego de mapa y tesoro! Usamos el Coding Express para explorar y los ladrillos mágicos para marcar puntos importantes en el camino. ¡Aprendimos a seguir secuencias para lograr una meta! ¡Son los mejores buscadores de tesoros! ¡Hasta la próxima expedición!"
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+        <!-- ............................................Aquí terminarán las actividades........................................... -->
+
+    </div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        var parentActivity = content.closest('.activity'); // Encuentra el contenedor de la actividad
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            parentActivity.classList.remove('active'); // Remueve clase activa si se cierra
+        } else {
+             // Opcional: Cierra otros contenidos abiertos antes de abrir uno nuevo
+             // closeAllContents();
+            content.style.display = "block";
+            parentActivity.classList.add('active'); // Añade clase activa si se abre
+        }
+    }
+
+    // Función opcional para cerrar todos los demás contenidos al abrir uno
+    /*
+    function closeAllContents() {
+        var allContents = document.querySelectorAll('.content');
+        var allActivities = document.querySelectorAll('.activity');
+        allContents.forEach(function(content) {
+            content.style.display = 'none';
+        });
+         allActivities.forEach(function(activity) {
+             activity.classList.remove('active');
+         });
+    }
+    */
+
+    function updateContent() {
+        var level = document.getElementById("class-level").value;
+        // Actualiza el texto del título H2
+        var levelText = document.getElementById("class-level").options[document.getElementById("class-level").selectedIndex].text;
+        document.getElementById("selected-level").innerText = "Nivel: " + levelText;
+
+        // Oculta todas las filas de contenido específico de nivel primero
+        var k1Contents = document.querySelectorAll('.k1-content');
+        var k2Contents = document.querySelectorAll('.k2-content');
+        var k3Contents = document.querySelectorAll('.k3-content');
+
+        k1Contents.forEach(function(el) { el.style.display = 'none'; });
+        k2Contents.forEach(function(el) { el.style.display = 'none'; });
+        k3Contents.forEach(function(el) { el.style.display = 'none'; });
+
+        // Muestra solo las filas del nivel seleccionado
+        // Usamos 'table-row' porque estamos mostrando/ocultando filas de tabla (<tr>)
+        var selectedContents = document.querySelectorAll('.' + level.toLowerCase() + '-content');
+        selectedContents.forEach(function(el) {
+             // Importante: Necesitamos asegurarnos de que el display sea correcto para filas de tabla
+             if (el.tagName === 'TR') {
+                 el.style.display = 'table-row';
+             } else {
+                 // Si por alguna razón hay otros elementos, usar 'block' o ajustar según sea necesario
+                 el.style.display = 'block';
+             }
+        });
+    }
+
+    // Asegura que updateContent se ejecute cuando la página cargue
+    document.addEventListener('DOMContentLoaded', function() {
+        updateContent();
+    });
+</script>
+
+</body>
+</html>
